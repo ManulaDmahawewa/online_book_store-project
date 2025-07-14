@@ -1,10 +1,24 @@
 import mysql from "mysql2/promise";
+import dotenv from "dotenv";
+import expressMySQLSession from "express-mysql-session";
+import session from "express-session";
+
+dotenv.config();
+
+const MySQLStore = expressMySQLSession(session);
 
 const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "",
-  database: "book_haven",
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
 });
 
-export default db;
+const sessionStore = new MySQLStore({
+  host: process.env.HOST,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  database: process.env.DATABASE,
+});
+
+export { db, sessionStore };
