@@ -10,3 +10,23 @@ body {
 .slick-dots li.slick-active div {
   @apply scale-100 opacity-100 bg-gray-50;
 }
+
+#book-sliser-main .slick-slider {
+  @apply w-[1170px] transform -translate-x-[10px];
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #1d4ed8;
+}
+
+input[type="range"]::-moz-range-thumb {
+  background-color: #1d4ed8;
+}
+
+input[type="range"]::-ms-thumb {
+  background-color: #1d4ed8;
+}
+
+input[type="range"] {
+  accent-color: #1d4ed8;
+}

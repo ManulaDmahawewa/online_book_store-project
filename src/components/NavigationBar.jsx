@@ -24,7 +24,7 @@ function NavigationBar() {
     }
   };
   return (
-    <div className="relative border-b-2">
+    <div className="sticky top-0 z-50 border-b-2 bg-neutral-50">
       <nav className="relative flex items-center justify-between w-3/5 m-auto ">
         <img src={logo} alt="company-logo" className="w-72" />
         <Link to="/">

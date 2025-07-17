@@ -7,12 +7,24 @@ import RegistrationPage from "./pages/RegistrationPage";
 import ShoppingCartPage from "./pages/ShoppingCartPage";
 import { Toaster } from "react-hot-toast";
 import GlobalContext from "./GlobalContext";
+import ScienceFictionBooksPage from "./pages/ScienceFictionBooksPage";
+import MysteryThrillerBooksPage from "./pages/MysteryThrillerBooksPage";
+import RomanceBooksPage from "./pages/RomanceBooksPage";
+import ChildrenBooksPage from "./pages/ChildrenBooksPage";
+import ScrollToTop from "./components/ScrollToTop";
+import AdminPageLayout from "./components/AdminPageLayout";
+import Dashboard from "./components/Dashboard";
+import BookManagementPage from "./pages/BookManagementPage";
+import AuthorManagementPage from "./pages/AuthorManagementPage";
+import CategoryManagementPage from "./pages/CategoryManagementPage";
+import OrderManagementPage from "./pages/OrderManagementPage";
 
 function App() {
   return (
     <BrowserRouter>
       <GlobalContext>
         <Toaster position="bottom-right" reverseOrder={true} />
+
         <Routes>
           <Route
             path="/"
@@ -26,6 +38,7 @@ function App() {
             path="/sign-in"
             element={
               <CustomerPageLayout>
+                <ScrollToTop />
                 <LoginPage />
               </CustomerPageLayout>
             }
@@ -42,8 +55,85 @@ function App() {
             path="/my-cart"
             element={
               <CustomerPageLayout>
+                <ScrollToTop />
                 <ShoppingCartPage />
               </CustomerPageLayout>
+            }
+          />
+          <Route
+            path="/science-fiction"
+            element={
+              <CustomerPageLayout>
+                <ScrollToTop />
+                <ScienceFictionBooksPage />
+              </CustomerPageLayout>
+            }
+          />
+          <Route
+            path="/mystery&thriller"
+            element={
+              <CustomerPageLayout>
+                <ScrollToTop />
+                <MysteryThrillerBooksPage />
+              </CustomerPageLayout>
+            }
+          />
+          <Route
+            path="/romance"
+            element={
+              <CustomerPageLayout>
+                <ScrollToTop />
+                <RomanceBooksPage />
+              </CustomerPageLayout>
+            }
+          />
+          <Route
+            path="/children"
+            element={
+              <CustomerPageLayout>
+                <ScrollToTop />
+                <ChildrenBooksPage />
+              </CustomerPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/dashboard"
+            element={
+              <AdminPageLayout>
+                <Dashboard />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/book-management"
+            element={
+              <AdminPageLayout>
+                <BookManagementPage />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/author-management"
+            element={
+              <AdminPageLayout>
+                <AuthorManagementPage />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/category-management"
+            element={
+              <AdminPageLayout>
+                <CategoryManagementPage />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/order-management"
+            element={
+              <AdminPageLayout>
+                <OrderManagementPage />
+              </AdminPageLayout>
             }
           />
         </Routes>

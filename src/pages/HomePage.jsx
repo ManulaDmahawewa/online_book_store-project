@@ -1,13 +1,19 @@
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import { GiArrowScope } from "react-icons/gi";
 import PromotionalCarousel from "../components/PromotionalCarousel";
+import BestSellerBooksSlider from "../components/BestSellerBooksSlider";
+import ScienceFictionBooksSlider from "../components/ScienceFictionBooksSlider";
+import MysteryThrillerBooksSlider from "../components/MysteryThrillerBooksSlider";
+import RomanceBooksSlider from "../components/RomanceBooksSlider";
+import ChildrenBooksSlider from "../components/ChildrenBooksSlider";
 
 function HomePage() {
   return (
     <div className="w-3/5 m-auto mt-5">
       <PromotionalCarousel />
+      <BestSellerBooksSlider />
+      <ScienceFictionBooksSlider />
+      <MysteryThrillerBooksSlider />
+      <RomanceBooksSlider />
+      <ChildrenBooksSlider />
     </div>
   );
 }

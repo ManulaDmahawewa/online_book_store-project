@@ -16,7 +16,7 @@ function GlobalContext({ children }) {
         console.log("result", result.data);
         setCurrentUser(result.data);
       } catch (error) {
-        console.log(error);
+        console.log(error.response.data.message);
       }
     };
     getCurrentUser();
