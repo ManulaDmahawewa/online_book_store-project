@@ -1,5 +1,5 @@
 import "./App.css";
-import CustomerPageLayout from "./components/CustomerPageLayout";
+import CustomerPageLayout from "./components/Layouts/CustomerPageLayout";
 import HomePage from "./pages/HomePage";
 import { BrowserRouter, Route, Routes } from "react-router";
 import LoginPage from "./pages/LoginPage";
@@ -12,12 +12,15 @@ import MysteryThrillerBooksPage from "./pages/MysteryThrillerBooksPage";
 import RomanceBooksPage from "./pages/RomanceBooksPage";
 import ChildrenBooksPage from "./pages/ChildrenBooksPage";
 import ScrollToTop from "./components/ScrollToTop";
-import AdminPageLayout from "./components/AdminPageLayout";
+import AdminPageLayout from "./components/Layouts/AdminPageLayout";
 import Dashboard from "./components/Dashboard";
 import BookManagementPage from "./pages/BookManagementPage";
 import AuthorManagementPage from "./pages/AuthorManagementPage";
 import CategoryManagementPage from "./pages/CategoryManagementPage";
 import OrderManagementPage from "./pages/OrderManagementPage";
+import UserManagementPage from "./pages/UserManagementPage";
+import AdminRegistration from "./pages/AdminRegistration";
+import AdminLoginPage from "./pages/AdminLoginPage";
 
 function App() {
   return (
@@ -96,6 +99,7 @@ function App() {
               </CustomerPageLayout>
             }
           />
+          <Route path="/admin/login" element={<AdminLoginPage />} />
           <Route
             path="/admin-panel/dashboard"
             element={
@@ -133,6 +137,23 @@ function App() {
             element={
               <AdminPageLayout>
                 <OrderManagementPage />
+              </AdminPageLayout>
+            }
+          />
+          "/admin-panel/user-management"
+          <Route
+            path="/admin-panel/user-management"
+            element={
+              <AdminPageLayout>
+                <UserManagementPage />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/user-manegement/admin-registration"
+            element={
+              <AdminPageLayout>
+                <AdminRegistration />
               </AdminPageLayout>
             }
           />

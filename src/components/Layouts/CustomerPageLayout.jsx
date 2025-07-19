@@ -1,4 +1,4 @@
-import NavigationBar from "./NavigationBar";
+import NavigationBar from "../NavigationBar";
 
 function CustomerPageLayout({ children }) {
   return (

@@ -1,5 +1,5 @@
-import AdminPageHeaderSection from "./AdminPageHeaderSection";
-import AdminSideNavigationBar from "./AdminSideNavigationBar";
+import AdminPageHeaderSection from "../AdminPageHeaderSection";
+import AdminSideNavigationBar from "../AdminSideNavigationBar";
 
 function AdminPageLayout({ children }) {
   return (

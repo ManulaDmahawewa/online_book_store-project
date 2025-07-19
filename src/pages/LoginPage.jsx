@@ -32,7 +32,7 @@ function LoginPage() {
 
   return (
     <div className="flex items-center justify-center w-3/5 h-[calc(100vh-118px)] m-auto ">
-      <div className="w-3/4 rounded-lg shadow-2xl bg-zinc-100 p-14 ">
+      <div className="w-3/4 border rounded-md shadow-xl shadow-gray-300 bg-blue-50 backdrop-blur-3xl p-14 ">
         <h2 className="text-5xl font-semibold text-center mb-7">Sign In</h2>
         <form className="flex flex-col px-8" onSubmit={handleLogin}>
           <label htmlFor="name" className="mb-2 text-lg">

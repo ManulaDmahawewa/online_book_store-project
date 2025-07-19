@@ -1,4 +1,4 @@
-import IndividualPagesHeadings from "../components/IndividualPagesHeadings";
+import IndividualPagesHeadings from "../components/Page_Headings/IndividualPagesHeadings";
 import FilterSection from "../components/FilterSection";
 import { Book } from "../components/tempary";
 import { FaPlus } from "react-icons/fa6";

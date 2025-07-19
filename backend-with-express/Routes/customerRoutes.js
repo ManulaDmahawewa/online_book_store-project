@@ -31,7 +31,7 @@ customerRoute.post("/customer/registration", async (req, res) => {
         email: email,
       };
 
-      res.status(200).json({
+      res.status(201).json({
         message: "User registered & logged in successfully",
         user: req.session.user,
       });

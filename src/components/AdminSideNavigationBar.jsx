@@ -33,6 +33,12 @@ function AdminSideNavigationBar() {
           Order Management
         </div>
       </Link>
+
+      <Link to={"/admin-panel/user-management"}>
+        <div className="p-8 pt-5 pb-5 text-xl transition duration-200 cursor-pointer hover:bg-blue-900/50 hover:text-blue-50">
+          User Management
+        </div>
+      </Link>
     </aside>
   );
 }

@@ -3,13 +3,13 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Slider from "react-slick";
-import { Book } from "./tempary";
-import SectionTitle from "./SectionTitle";
+import { Book } from "../tempary";
+import SectionTitle from "../Page_Headings/SectionTitle";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { MdNavigateNext } from "react-icons/md";
 import { Link } from "react-router";
 
-function ChildrenBooksSlider() {
+function RomanceBooksSlider() {
   const NextArrow = ({ onClick }) => {
     return (
       <button
@@ -46,8 +46,8 @@ function ChildrenBooksSlider() {
   return (
     <div id="book-sliser-main" className="mt-6">
       <div className="relative flex justify-center ">
-        <SectionTitle title="Children" />
-        <Link to={"children"}>
+        <SectionTitle title="Romance" />
+        <Link to={"/romance"}>
           <span className="absolute right-0 flex items-center font-semibold cursor-pointer bottom-3 hover:text-blue-500">
             EXPLORE ALL <MdNavigateNext className="text-lg font-semibold " />
             <MdNavigateNext className="text-lg font-semibold transform -translate-x-1/2 " />
@@ -91,4 +91,4 @@ function ChildrenBooksSlider() {
   );
 }
 
-export default ChildrenBooksSlider;
+export default RomanceBooksSlider;

@@ -1,7 +1,7 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import banner from "../assets/banners/banner1.png";
+import banner from "../../assets/banners/banner1.png";
 
 function PromotionalCarousel() {
   var settings = {

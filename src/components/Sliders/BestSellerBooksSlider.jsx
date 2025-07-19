@@ -3,13 +3,11 @@ import "slick-carousel/slick/slick-theme.css";
 import { FaPlus } from "react-icons/fa6";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import Slider from "react-slick";
-import { Book } from "./tempary";
-import SectionTitle from "./SectionTitle";
+import { Book } from "../tempary";
+import SectionTitle from "../Page_Headings/SectionTitle";
 import { GrNext, GrPrevious } from "react-icons/gr";
-import { MdNavigateNext } from "react-icons/md";
-import { Link } from "react-router";
 
-function ScienceFictionBooksSlider() {
+function BestSellerBooksSlider() {
   const NextArrow = ({ onClick }) => {
     return (
       <button
@@ -45,14 +43,8 @@ function ScienceFictionBooksSlider() {
   };
   return (
     <div id="book-sliser-main" className="mt-6">
-      <div className="relative flex justify-center ">
-        <SectionTitle title="Science Fiction" />
-        <Link to={"/science-fiction"}>
-          <span className="absolute right-0 flex items-center font-semibold cursor-pointer bottom-3 hover:text-blue-500">
-            EXPLORE ALL <MdNavigateNext className="text-lg font-semibold " />
-            <MdNavigateNext className="text-lg font-semibold transform -translate-x-1/2 " />
-          </span>
-        </Link>
+      <div className="flex justify-center ">
+        <SectionTitle title=" Bestseller" />
       </div>
       <div className="slider-container">
         <Slider {...settings}>
@@ -91,4 +83,4 @@ function ScienceFictionBooksSlider() {
   );
 }
 
-export default ScienceFictionBooksSlider;
+export default BestSellerBooksSlider;

@@ -4,6 +4,7 @@ import { sessionStore } from "./db.js";
 import cors from "cors";
 import dotenv from "dotenv";
 import customerRoute from "./Routes/customerRoutes.js";
+import adminRoute from "./Routes/adminRoutes.js";
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.use(
 );
 
 app.use("/book-haven/api", customerRoute);
+app.use("/book-haven/api", adminRoute);
 
 const PORT = process.env.PORT || 3000;
 
