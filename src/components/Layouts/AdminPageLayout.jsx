@@ -1,7 +1,15 @@
+import { Navigate } from "react-router";
+import { useGlobalProvider } from "../../GlobalContext";
 import AdminPageHeaderSection from "../AdminPageHeaderSection";
 import AdminSideNavigationBar from "../AdminSideNavigationBar";
 
 function AdminPageLayout({ children }) {
+  const { currentAdmin } = useGlobalProvider();
+
+  if (!currentAdmin) {
+    return <Navigate to="/admin/login" />;
+  }
+
   return (
     <div className="flex flex-col h-screen bg-blue-400">
       <AdminPageHeaderSection />

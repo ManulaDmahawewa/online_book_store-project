@@ -9,6 +9,8 @@ import toast from "react-hot-toast";
 
 function NavigationBar() {
   const { currentUser, setCurrentUser, API_URL } = useGlobalProvider();
+  console.log(currentUser);
+
   const navigate = useNavigate();
 
   const handleLogout = async () => {

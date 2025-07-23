@@ -21,6 +21,7 @@ import OrderManagementPage from "./pages/OrderManagementPage";
 import UserManagementPage from "./pages/UserManagementPage";
 import AdminRegistration from "./pages/AdminRegistration";
 import AdminLoginPage from "./pages/AdminLoginPage";
+import Loading from "./components/Loading";
 
 function App() {
   return (
@@ -157,6 +158,15 @@ function App() {
               </AdminPageLayout>
             }
           />
+          <Route
+            path="/admin-panel/user-manegement/admin-registration/:id"
+            element={
+              <AdminPageLayout>
+                <AdminRegistration />
+              </AdminPageLayout>
+            }
+          />
+          <Route path="/loading" element={<Loading />} />
         </Routes>
       </GlobalContext>
     </BrowserRouter>
