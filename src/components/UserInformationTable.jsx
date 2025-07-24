@@ -9,10 +9,6 @@ import toast from "react-hot-toast";
 function UserInformationTable({ allUserDetails, getAllUserDetails }) {
   const { API_URL } = useGlobalProvider();
 
-  useEffect(() => {
-    console.log("Refresh user details table");
-  }, [allUserDetails]);
-
   const handleDelete = async (userId) => {
     if (userId) {
       try {

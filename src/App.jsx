@@ -22,6 +22,7 @@ import UserManagementPage from "./pages/UserManagementPage";
 import AdminRegistration from "./pages/AdminRegistration";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import Loading from "./components/Loading";
+import Authorregistration from "./pages/Authorregistration";
 
 function App() {
   return (
@@ -163,6 +164,22 @@ function App() {
             element={
               <AdminPageLayout>
                 <AdminRegistration />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/user-manegement/author-registration"
+            element={
+              <AdminPageLayout>
+                <Authorregistration />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/user-manegement/author-registration/:id"
+            element={
+              <AdminPageLayout>
+                <Authorregistration />
               </AdminPageLayout>
             }
           />

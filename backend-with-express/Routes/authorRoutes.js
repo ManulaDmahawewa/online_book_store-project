@@ -20,7 +20,9 @@ authorRoute.post("/author/insert-author", async (req, res) => {
     ]);
     res.status(200).json({ message: "Author details inserted successfuly" });
   } catch (error) {
-    console.error("Insert Author Error:", error);
+    if (error.code === "ER_DUP_ENTRY") {
+      return res.status(400).json({ message: "This author already exists" });
+    }
     res.status(500).json({ message: "Database error", details: error.message });
   }
 });
@@ -108,3 +110,5 @@ authorRoute.delete("/author/delete/author-details/:id", async (req, res) => {
     res.status(500).json({ message: "Database error", details: error.message });
   }
 });
+
+export default authorRoute;
