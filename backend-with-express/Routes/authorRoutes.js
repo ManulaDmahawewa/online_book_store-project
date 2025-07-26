@@ -34,7 +34,7 @@ authorRoute.get("/author/get/all-author-details", async (req, res) => {
   try {
     const [result] = await db.execute(sql);
     if (result.length === 0) {
-      return res.status(404).json({ message: "No author details found" });
+      return res.status(200).json([]);
     }
     res.status(200).json(result);
   } catch (error) {

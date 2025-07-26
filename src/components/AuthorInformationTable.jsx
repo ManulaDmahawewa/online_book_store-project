@@ -20,10 +20,6 @@ function AuthorInformationTable() {
       setAuthorsDetails(result.data);
     } catch (error) {
       console.error(error);
-      if (error.response?.status === 404) {
-        console.error(error.response?.status);
-        setAuthorsDetails([]);
-      }
     }
   };
 
