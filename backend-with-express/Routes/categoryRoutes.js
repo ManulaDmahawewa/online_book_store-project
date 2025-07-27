@@ -1,7 +1,7 @@
 import express from "express";
 import { db } from "../db.js";
 
-categoryRoute = express.Router();
+const categoryRoute = express.Router();
 
 //----------------------insert category name-------------------------
 
@@ -13,7 +13,7 @@ categoryRoute.post("/category/insert-category", async (req, res) => {
     if (!category_name || !category_name.trim()) {
       return res.status(400).json({ message: "Category name required" });
     }
-    const [result] = await db.execute(sql, [category_name]);
+    const [result] = await db.execute(sql, [category_name.toLowerCase()]);
     res.status(201).json({
       message: "Category name inserted successfuly",
       inserdedID: result.insertId,
@@ -28,7 +28,7 @@ categoryRoute.post("/category/insert-category", async (req, res) => {
 
 //----------------------------get all category names-----------------------
 categoryRoute.get("/category/get/all-categories", async (req, res) => {
-  const sql = `select * from categories `;
+  const sql = `SELECT * FROM categories ORDER BY category_id ASC `;
 
   try {
     const [result] = await db.execute(sql);
@@ -73,7 +73,10 @@ categoryRoute.put("/category/update/category-name/:id", async (req, res) => {
         .status(400)
         .json({ message: "Insert category name to update" });
     }
-    const [result] = await db.execute(sql, [category_name, category_id]);
+    const [result] = await db.execute(sql, [
+      category_name.toLowerCase(),
+      category_id,
+    ]);
     if (result.affectedRows === 0) {
       return res.status(404).json({ message: "No category found" });
     }

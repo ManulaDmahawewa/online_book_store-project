@@ -30,7 +30,7 @@ authorRoute.post("/author/insert-author", async (req, res) => {
 //------------------route for get all author details------------------------------
 
 authorRoute.get("/author/get/all-author-details", async (req, res) => {
-  const sql = `select * from author_details`;
+  const sql = `select * from author_details ORDER BY author_id ASC`;
   try {
     const [result] = await db.execute(sql);
     if (result.length === 0) {

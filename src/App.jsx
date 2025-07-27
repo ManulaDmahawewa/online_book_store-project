@@ -23,6 +23,7 @@ import AdminRegistration from "./pages/AdminRegistration";
 import AdminLoginPage from "./pages/AdminLoginPage";
 import Loading from "./components/Loading";
 import Authorregistration from "./pages/Authorregistration";
+import CategoryRegistration from "./pages/CategoryRegistration";
 
 function App() {
   return (
@@ -180,6 +181,22 @@ function App() {
             element={
               <AdminPageLayout>
                 <Authorregistration />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/category-manegement/category-registration"
+            element={
+              <AdminPageLayout>
+                <CategoryRegistration />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/category-manegement/category-registration/:id"
+            element={
+              <AdminPageLayout>
+                <CategoryRegistration />
               </AdminPageLayout>
             }
           />

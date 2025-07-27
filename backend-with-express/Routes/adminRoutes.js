@@ -104,7 +104,7 @@ adminRoute.post("/admin/logout", async (req, res) => {
 
 adminRoute.get("/admin/get/all-admin-details", async (req, res) => {
   const sql =
-    "select user_id,user_name,user_email,user_role from user_details ";
+    "select user_id,user_name,user_email,user_role from user_details ORDER BY user_id ASC ";
 
   try {
     const [result] = await db.execute(sql);
