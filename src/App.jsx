@@ -24,6 +24,7 @@ import AdminLoginPage from "./pages/AdminLoginPage";
 import Loading from "./components/Loading";
 import Authorregistration from "./pages/Authorregistration";
 import CategoryRegistration from "./pages/CategoryRegistration";
+import BookRegistration from "./pages/BookRegistration";
 
 function App() {
   return (
@@ -197,6 +198,22 @@ function App() {
             element={
               <AdminPageLayout>
                 <CategoryRegistration />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/book-management/book-registration"
+            element={
+              <AdminPageLayout>
+                <BookRegistration />
+              </AdminPageLayout>
+            }
+          />
+          <Route
+            path="/admin-panel/book-management/book-registration/:id"
+            element={
+              <AdminPageLayout>
+                <BookRegistration />
               </AdminPageLayout>
             }
           />

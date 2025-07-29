@@ -10,6 +10,7 @@ import categoryRoute from "./Routes/categoryRoutes.js";
 import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
+import bookRoute from "./Routes/bookRoute.js";
 
 dotenv.config();
 
@@ -42,17 +43,17 @@ const __dirname = path.dirname(__filename);
 
 const storage = multer.diskStorage({
   destination: (req, res, cd) => {
-    cd(null, path.join(__dirname, "../public/uploads/"));
+    cd(null, path.join(__dirname, "public/uploads/"));
   },
   filename: (req, file, cd) => {
     cd(null, file.originalname);
   },
 });
 const upload = multer({ storage });
-app.use(express.static("public"));
+app.use("/book-haven/api", express.static("public"));
 
-app.post("/upload", upload.single("image"), (req, res) => {
-  console.log(req);
+app.post("/book-haven/api/upload", upload.single("image"), (req, res) => {
+  console.log(req.file);
   return res.json({
     path: `/uploads/${req.file.filename}`,
   });
@@ -64,6 +65,7 @@ app.use("/book-haven/api", customerRoute);
 app.use("/book-haven/api", adminRoute);
 app.use("/book-haven/api", authorRoute);
 app.use("/book-haven/api", categoryRoute);
+app.use("/book-haven/api", bookRoute);
 
 const PORT = process.env.PORT || 3000;
 

@@ -1,8 +1,10 @@
+import { useState } from "react";
+
 function Select({
   value,
   onChange,
   defaultValue,
-  mapingArray,
+  mapingArray = [0, 1, 2],
   optionId,
   optionName,
 }) {
@@ -15,7 +17,11 @@ function Select({
       <option value="">{defaultValue}</option>
       {mapingArray.map((data) => {
         return (
-          <option id={data[optionId]} value={data[optionId]}>
+          <option
+            id={data[optionId]}
+            value={data[optionId]}
+            key={data[optionId]}
+          >
             {data[optionName]}
           </option>
         );

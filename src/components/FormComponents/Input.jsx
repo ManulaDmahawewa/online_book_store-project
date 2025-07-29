@@ -1,6 +1,6 @@
 import React from "react";
 
-function Input({ type, placeholder, value, onChange }) {
+function Input({ type, placeholder, value, onChange, accept }) {
   return (
     <input
       className="p-1 pl-3 mb-2 text-lg rounded-md"
@@ -8,6 +8,7 @@ function Input({ type, placeholder, value, onChange }) {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      accept={accept}
     />
   );
 }
